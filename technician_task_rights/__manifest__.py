@@ -2,16 +2,11 @@
     'name': 'Technician Task Rights',
     'version': '18.0.1.0.0',
     'category': 'Technician Max',
-    'summary': 'Restrict technicians access to only Max Techniciens app',
+    'summary': 'Restrict technicians from changing kanban stages manually',
     'description': """
-        This module restricts technicians to see only the Max Techniciens application.
-
-        Features:
-        - Technicians can only access Max Techniciens app
-        - Managers can access all applications
-        - Automatically hides all other apps for technicians
-        - Prevents technicians from manually changing kanban stages of tasks
-        - Technicians can still use the start/stop buttons which automatically change stages
+        This module prevents technicians from manually changing the kanban stages of tasks.
+        Only managers with the 'Technician Task Manager' group can modify task stages manually.
+        Technicians can still use the start/stop buttons which automatically change stages.
     """,
     'author': 'Your Company',
     'website': 'https://www.yourcompany.com',
