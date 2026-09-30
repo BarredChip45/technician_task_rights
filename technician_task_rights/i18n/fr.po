@@ -1,0 +1,39 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* technician_task_rights
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-30 00:00+0000\n"
+"PO-Revision-Date: 2026-09-30 00:00+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: technician_task_rights
+#: model:ir.module.module,shortdesc:base.module_technician_task_rights
+msgid "Technician Task Rights"
+msgstr "Droits des tâches technicien"
+
+#. module: technician_task_rights
+#: model:ir.module.module,summary:base.module_technician_task_rights
+msgid "Technician access restrictions: kanban stages, card ordering and date visibility"
+msgstr "Restrictions techniciens : étapes kanban, ordre des cartes et visibilité par date"
+
+#. module: technician_task_rights
+#. odoo-python
+#: code:addons/technician_task_rights/models/tt_task.py:0
+msgid "Vous n'avez pas le droit de changer l'étape Kanban manuellement."
+msgstr "Vous n'avez pas le droit de changer l'étape Kanban manuellement."
+
+#. module: technician_task_rights
+#. odoo-python
+#: code:addons/technician_task_rights/models/tt_task.py:0
+msgid "Vous n'avez pas le droit de réordonner les tâches."
+msgstr "Vous n'avez pas le droit de réordonner les tâches."

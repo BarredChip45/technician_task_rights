@@ -10,8 +10,15 @@ class TTTask(models.Model):
     _inherit = "tt.task"
 
     def write(self, vals):
+        is_manager = self.env.user.has_group('technician_task_mgmt.group_tech_manager')
+        # Les techniciens ne peuvent pas réordonner les tâches (glisser-déposer kanban).
+        # Les autres utilisateurs le peuvent. La carte revient à sa place avec un
+        # message clair, comme pour le changement d'étape.
+        is_technician = self.env.user.has_group('technician_task_mgmt.group_technician')
+        if 'sequence' in vals and is_technician and not is_manager and not self.env.su:
+            raise exceptions.AccessError(_("Vous n'avez pas le droit de réordonner les tâches."))
         # Empêcher changement d'étape manuel si pas manager
-        if 'stage_id' in vals and not self.env.user.has_group('technician_task_mgmt.group_tech_manager'):
+        if 'stage_id' in vals and not is_manager:
             # Vérifier si c'est un changement manuel direct (pas de changement de state en même temps)
             # et pas via un contexte de synchronisation
             if not ('state' in vals or self.env.context.get('_skip_stage_sync')):
